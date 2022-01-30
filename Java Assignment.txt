@@ -1,0 +1,454 @@
+**********************************************************************************************************************************************************************
+24-01-2022
+**********************************************************************************************************************************************************************
+Q. Write algorithm that checks two numbers and print maximum of two numbers
+start 
+take input of two numbers a, b
+if a>b then
+	display a is greater number
+otherwise
+	display b is greater number
+stop
+
+Q.Write an algorithm that checks two numbers and print minimum of two numbers
+start 
+take input of two numbers a, b
+if a<b then
+	display a is minimum number
+otherwise
+	display b is minimum number
+stop
+
+Q.Write an algorithm that checks two numbers and print average of two numbers
+start 
+take input of two numbers a, b
+calculate avg=(a+b)/2
+print avg
+stop
+
+Q.WAP to print 1 to 10 using while loop
+
+public class Main
+{
+	public static void main(String[] args) {
+		int num=10;
+		int i=1;
+		while(num>=i){
+		    System.out.print(i+" ");
+		    i++;
+		}
+	}
+}
+Q.WAP to print 10 to 1 using while loop
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int i=10;
+		while(0<i){
+		    System.out.print(i+" ");
+		    i--;
+		}
+	}
+}
+Q.WAP to print 2,4,6,8,10 using while loop and for loop
+
+public class Main
+{
+	public static void main(String[] args) {
+		int num=10;
+		int i=2;
+		while(num>=i){
+		    System.out.print(i+" ");
+		    i+=2;
+		}
+		System.out.println();
+		for(int j=2;j<=num;j+=2){
+		    System.out.print(j+" ");
+		}
+		
+	}
+}
+Q.WAP to print 10,8,6,4,2 using while loop and for loop
+
+public class Main
+{
+	public static void main(String[] args) {
+		int num=10;
+		int i=10;
+		while(0<i){
+		    System.out.print(i+" ");
+		    i-=2;
+		}
+		System.out.println();
+		for(int j=num;j>0;j-=2){
+		    System.out.print(j+" ");
+		}
+		
+	}
+}
+**********************************************************************************************************************************************************************
+25-01-2022
+**********************************************************************************************************************************************************************
+
+Q. WAP that checks if a number is prime number.
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number:-");
+		int num=sc.nextInt();
+		int m=num/2;
+		int flag=0;
+		if(num==0 || num==1){
+		    System.out.println("num is not prime");
+		}else{
+		    
+		for(int i=2;i<=m;i++){
+		    if(num%i==0){
+		        flag=1;
+		        System.out.println("num is not prime");
+		        break;
+		    }
+		}
+		}
+		if(flag==0){
+		    System.out.println("num is prime");
+		}
+		
+	}
+}
+
+Q. Take the user input Java Program to calculate power of number.
+
+import java.util.*;
+public class Main
+{   static int pw=1;
+    private static int power(int base, int exp){
+        for(int i=0;i<exp;i++){
+            pw=pw*base;
+        }
+        return pw;
+    }
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the base:-");
+		int num=sc.nextInt();
+		System.out.println("Enter the exponent:-");
+		int exp=sc.nextInt();
+		
+		int pow=power(num,exp);
+		System.out.println("The power of "+num+"^"+exp+" ="+pow);
+		
+	}
+}
+**********************************************************************************************************************************************************************
+26-01-2022
+**********************************************************************************************************************************************************************
+
+Q. use while loop to calculate the sum of till the given number n.
+import java.util.*;
+public class Main
+{   
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the num:-");
+		int num=sc.nextInt();
+		int i=1,sum=0;
+		while(num>=i){
+		    sum=sum+i;
+		    i++;
+		}
+		System.out.println("Sum of the given numbers 1 to n is:-"+sum);
+	}
+}
+Q. use while loop to calculate the factorail of given number.
+
+import java.util.*;
+public class Main
+{   
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the base:-");
+		int num=sc.nextInt();
+		int i=1,fact=1;
+		while(num>=i){
+		    fact=fact*i;
+		    i++;
+		}
+		System.out.println("Factorial of the given number is:-"+fact);
+	}
+}
+Q. WAP to multiplication table of a number entered by user
+
+import java.util.*;
+public class Main
+{   
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the number of table:-");
+		int num=sc.nextInt();
+		int num1=10;
+		int i=1,tab=0;
+		while(num1>=i){
+		    tab=num*i;
+		    System.out.println(num+"*"+i+"="+tab);
+		    i++;
+		    tab=0;
+		}
+		
+	}
+}
+Q.Swap the two numbers and take the input from user
+
+import java.util.*;
+public class Main
+{   
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the num1:-");
+		int num1=sc.nextInt();
+		System.out.println("Enter the num2:-");
+		int num2=sc.nextInt();
+		int temp;
+		temp=num1;
+		num1=num2;
+		num2=temp;
+		System.out.println("After swaping the numbers:-"+num1+" "+ num2);
+		
+	}
+}
+**********************************************************************************************************************************************************************
+27-01-2022
+**********************************************************************************************************************************************************************
+Q.Check the year is leap or not
+
+import java.util.*;
+public class Main
+{   
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the the year:-");
+		int year=sc.nextInt();
+		if((year%4==0 && year%100!=0) || year%400==0){
+		    System.out.println("Year is Leap Year...!");
+		}else{
+		    System.out.println("Year is not Leap Year...!");
+		}
+		
+		
+	}
+}
+
+Q.Calculate the Permutaion of given numbers
+import java.util.*;
+public class Main
+{
+    public static void swap(int a[], int i, int j){
+        int temp=a[i];
+        a[i]=a[j];
+        a[j]=temp;
+    }
+    public static void printarray(int a[]){
+        System.out.println();
+        for(int i=0;i<a.length;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+    public static void permutation(int a[], int cid){
+        if(cid==a.length-1){
+            printarray(a);
+            return;
+        }
+        for(int i=cid;i<a.length;i++){
+            swap(a,i,cid);
+            permutation(a,cid+1);
+            swap(a,i,cid);
+        }
+    }
+	public static void main(String[] args) {
+	    
+		int arr[]={1,2,3};
+		permutation(arr,0);
+	}
+}
+Q.Calculate the distance between two points
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the values of points x1,x2,y1,y2:-");
+		int x1=sc.nextInt();
+		int x2=sc.nextInt();
+		int y1=sc.nextInt();
+		int y2=sc.nextInt();
+		
+		double dis=Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1));
+		System.out.println("Distance between two points:-"+dis);
+	}
+}
+
+Q. sum of the even or odd digits of given number
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the num:-");
+		int num=sc.nextInt();
+		int odd=0,even=0;
+		int r;
+		while(num>0){
+		    r=num%10;
+		    if(r%2==0){
+		        even=even+r;
+		    }else{
+		        odd=odd+r;
+		    }
+		    num=num/10;
+		}
+		System.out.println("Sum of even digits:-"+even);
+		System.out.println("Sum of odd digits:-"+odd);
+	}
+}
+Q. Reverse a number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the num:-");
+		int num=sc.nextInt();
+		int r=0,rev=0;
+		while(num>0){
+		    r=num%10;
+		    rev=(rev*10)+r;
+		    num=num/10;
+		}
+		System.out.println("Reverse num:-"+rev);
+		
+	}
+}
+
+Q.WAP to print first x terms of the series 3n+2 which are not multiply by 4
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the num:-");
+		int num=sc.nextInt();
+		int count=0;
+	    for(int i=1;count<num;i++){
+	        int ap=3*i+2;
+	        if(ap%4!=0){
+	            System.out.print(ap+" ");
+	            count++;
+	        }
+	    }
+		
+	}
+}
+
+Q.Calculate the compound interest
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    // innterest=p*(1+r/n)^tn-p
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the principal:-");
+		double principal=sc.nextDouble();
+		System.out.println("Enter the rate:-");
+		double rate=sc.nextDouble();
+		System.out.println("Enter the time:-");
+		double time=sc.nextDouble();
+		System.out.println("Enter the number of time interest is compounded:-");
+		double number=sc.nextDouble();
+		
+		double interest=principal* (Math.pow((1+rate/number),(time*number))) - principal;
+		
+		System.out.println("Compound Interest:- "+interest);
+	}
+}
+**********************************************************************************************************************************************************************
+28-01-2022
+**********************************************************************************************************************************************************************
+Q.Left Triangle Star Pattern
+
+import java.util.*;
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int n=10;
+	    for(int i=0;i<n;i++){
+	        for(int k=2*(n-i);k>1;k--){
+	            System.out.print(" ");
+	        }
+	        for(int j=0;j<=i;j++){
+	            System.out.print(" *");
+	        }
+	        System.out.println();
+	    }
+	}
+}
+
+Q.Pyramid Pattern
+import java.util.*;
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int n=10;
+	    for(int i=0;i<n;i++){
+	        for(int k=(n-i);k>1;k--){
+	            System.out.print(" ");
+	        }
+	        for(int j=0;j<=i;j++){
+	            System.out.print(" *");
+	        }
+	        System.out.println();
+	    }
+	}
+}
+
+Q. Diamond shape Pattern
+
+import java.util.*;
+public class Main
+{
+
+	public static void main(String[] args) {
+	    int n=9;
+	    int mid=(n-1)/2;
+	    for(int i=1;i<=mid;i++){
+	        for(int j=1;j<=(mid-i);j++){
+	            System.out.print(" ");
+	        }
+	        for(int k=1;k<=(i*2-1);k++){
+	            System.out.print("*");
+	        }
+	        System.out.println();
+	    }
+	    for(int i=1;i<=(mid-1);i++){
+	        //space
+	        for(int j=1;j<=i;j++){
+	            System.out.print(" ");
+	        }
+	        for(int k=1;k<=2*(mid-i)-1;k++){
+	            System.out.print("*");
+	        }
+	        System.out.println();
+	    }
+	}
+}
+
