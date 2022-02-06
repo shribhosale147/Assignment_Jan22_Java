@@ -1,0 +1,113 @@
+31-01-2022
+Q 1. Write a program to print the product of the decimal and int number.
+
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        float b=sc.nextFloat();
+        float c=a*b;
+        System.out.println("Product:-"+c);
+    }
+}
+
+Q 2.Print the ASCII value of any character user provides.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        char c=sc.next().charAt(0);
+        int a=c;
+        System.out.println("ASCII:-"+a);
+    }
+}
+Q 3.WAP to add 3 to the ASCII value of the any character user provides and the equivalent
+character.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        char c=sc.next().charAt(0);
+        int a=c;
+        a+=3;
+        char d=(char)a;
+        System.out.println("After adding 3 to ascii value:-"+d);
+    }
+}
+Q 4.WAP to covert temperature from fahrenheit to celsius degree.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int feh=sc.nextInt();
+        float cels=(float)(feh-32)*5/9;
+        System.out.println("fahrenheit to celsius degree:-"+cels);
+    }
+}
+
+Q 5.WAP that reads a number in inches, convert it to meters.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        float inch=sc.nextInt();
+        double meter=inch/39.3700787402;
+        System.out.println("Inches to Meter:-"+meter);
+    }
+}
+Q 6.WAP to convert minutes  into a number of years and days.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int min=sc.nextInt();
+        int year=min/525600;
+        if(year==0){
+            int day=min/1440;
+            System.out.println(min+" Minutes to number of "+ year +" years and "+day+" days");
+
+        }else{
+            int remy=min%525600;
+            int days=remy/1440;
+            System.out.println(min+" Minutes to number of "+ year +" years and "+days+" days");
+
+        }
+    }
+}
+
+Q 7. Take string as Name of the city and convert it to reverse string and show on the console.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        char arr[]=str.toCharArray();
+        for(int i=arr.length-1;i>=0;i--){
+            System.out.print(arr[i]);
+        }
+    }
+}
+Q 8. Check if a string is palindrom or not. e.g ABCBA
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String str=sc.nextLine();
+        char arr[]=str.toCharArray();
+        int j=arr.length-1;
+        int i=0,f=0;
+        while(i<=j){
+            if(arr[i]!=arr[j]){
+                f=1;
+                System.out.println("string is not palindrome");
+                break;
+            }
+            i++;
+            j--;
+        }
+        if(f==0){
+            System.out.println("string is palindrome");
+        }
+    }
+}

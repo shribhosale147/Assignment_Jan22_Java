@@ -1,0 +1,61 @@
+01-02-2022
+
+Q 1.WAP to calculate no.of digits in a number entered by user.
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the number:-");
+	    int num=sc.nextInt();
+	    int digit=0;
+	    while(num>0){
+	        num=num/10;
+	        digit++;
+	    }
+	    System.out.print("No of digits:-"+digit);
+	}
+}
+
+Q 2. Apply do while loop to calculate factorial a number such that, program asks user, if he wants to
+continue, if yes, program should run again.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    char ch;
+	    do{
+	        System.out.println("Enter the number:-");
+	        int num=sc.nextInt();
+	        int fact=1;
+	        for(int i=1;i<=num;i++){
+	            fact=fact*i;
+	            
+	        }
+	        System.out.println("Factorial:-"+fact);
+	        System.out.print("Do you want to continue Yes or No:-");
+	        ch=sc.next().charAt(0);
+	    }while(ch=='Y' || ch=='y');
+	    
+	}
+}
+
+Q 3. WAP to create a function that check if no is odd or even. call this function from main method.
+import java.util.*;
+public class Main
+{
+    public static void evenOdd(int num){
+        if(num%2==0){
+            System.out.println("This is even number");
+        }else{
+            System.out.println("This is odd number");
+        }
+    }
+	public static void main(String[] args) {
+	    evenOdd(5);
+	    
+	    
+	}
+}
