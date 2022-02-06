@@ -1,0 +1,225 @@
+04-02-2022
+Q 1.Length and breadth of a rectangle are 5 and 7 respectively. Write a program to calculate the area and perimeter of the rectangle.
+import java.util.Scanner;
+
+public class Feb4 {
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int l=sc.nextInt();
+        int w=sc.nextInt();
+        int prect=2*l+2*w;
+        int arect=l*w;
+        System.out.println("Perimeter of rectangle:-"+prect);
+        System.out.println("Area of rectangle:-"+arect);
+    }
+}
+
+Q .Write a program to calculate the perimeter of a triangle having sides of length 2,3 and 5 units.
+import java.util.Scanner;
+
+public class Demo{
+    public static void peroftri(){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int res=a+b+c;
+        System.out.println("Perimeter of triangle:-"+res);
+    }
+    public static void main(String args[]){
+    peroftri();
+    }
+}
+
+Q.Write a program to add 8 to the number 2345 and then divide it by 3. Now, the modulus of the quotient is taken with 5 and then multiply the resultant value by 5. Display the final result.
+class  Demo{
+  public static void main(String[] args){
+    System.out.println((((8+2345)/3)%5)*5);
+  }
+}
+
+Q.Write a program to check if the two numbers 23 and 45 are equal.
+class Demo{
+  public static void main(String[] args){
+    System.out.println(23 == 45);
+  }
+}
+
+Q.Write a program to print the power of 7 raised to 5.
+public class Demo{
+    public static void powerofnum(int base, int power){
+        int k=1,res=1;
+        while(k<=power){
+            res=res*base;
+            k++;
+        }
+        System.out.println("power:-"+res);
+    }
+    public static void main(String args[]){
+    powerofnum(7,5);
+    }
+}
+Q.Assign values of variables 'a' and 'b' as 55 and 70 respectively and then check if both the conditions 'a < 50' and 'a < b' are true.
+class  Demo{
+  public static void main(String[] args){
+    int a = 55;
+    int b = 70;
+    System.out.println(a < 50 && a < b);
+  }
+}
+Q.Now solve the above question to check if atleast one of the conditions 'a < 50' or 'a < b' is true.
+class  Demo{
+  public static void main(String[] args){
+    int a = 55;
+    int b = 70;
+    System.out.println(a < 50 || a < b);
+  }
+}
+
+Q.If the marks of Robert in three subjects are 78,45 and 62 respectively (each out of 100 ), write a program to calculate his total marks and percentage marks.
+class  Demo{
+  public static void main(String[] args){
+    int a = 78;
+    int b = 45;
+    int c=62;
+	int total=a+b+c;
+	int per=(total/300)*100;
+    System.out.println("Total marks:-"+total);
+System.out.println("Percentage:-"+per);
+  }
+}
+Q.Suppose the values of variables 'a' and 'b' are 6 and 8 respecrtively, write two programs to swap the values of the two variables.
+1 - first program by using a third variable
+2 - second program without using any third variable
+( Swapping means interchanging the values of the two variables E.g.- If entered value of x is 5 and y is 10 then after swapping the value of x and y should become 10 and 5 respectively.)
+
+class  Demo{
+  public static void main(String[] args){
+   int a,b,c;
+    using third variable
+    a = c
+    a = b
+    b = c
+    without using third variable
+    b = b-a
+    a = b+a
+    b = -(b-a)
+  }
+}
+
+Q.Write a program to convert Fahrenheit into Celsius.
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int feh=sc.nextInt();
+        float cels=(float)(feh-32)*5/9;
+        System.out.println("fahrenheit to celsius degree:-"+cels);
+    }
+}
+Q.The total number of students in a class are 90 out of which 45 are boys. If 50% of the total students secured grade 'A' out of which 20 are boys, 
+then write a program to calculate the total number of girls getting grade 'A'.
+
+public class Demo{
+    public static void calgirlsgrade(){
+        // total 90 students in clas
+        // out of 90 students 45 are boys
+        int agradestud=90*50/100;//50% student got A grade
+        int agirls=agradestud-20;//out of 50% students 20 are boys and
+                                // remaining are girls
+        System.out.println("A grade girls:-"+agirls);
+    }
+    public static void main(String args[]){
+        calgirlsgrade();
+    }
+}
+
+
+Q.Write a program to calculate the sum of the first and the second last digit of a 5 digit.
+E.g.- NUMBER : 12345        OUTPUT : 1+4=5
+public class Demo{
+    public static void seclastdigit(int num){
+        int rem=0,sec=0;
+        int count=0;
+        while(num>0){
+            rem=num%10;
+            num=num/10;
+            count++;
+            if(count==2) {
+                sec = rem;
+            }
+        }
+        int add=rem+sec;
+        System.out.println("Addition of  first and second last digits:-"+add);
+    }
+    public static void main(String args[]){
+    seclastdigit(12345);
+    }
+}
+
+Q.Take a 4 digit number. Write a program to display a number whose digits are 2 greater than the corresponding digits of the number TAKEN.
+For example, if the number which was taken is 5696, then the displayed number should be 7818.
+
+public class Demo{
+    public static void seclastdigit(int num){
+        int sum=0,adigit=0;
+        while(num>0) {
+            int rem = num % 10;
+            int res=(rem+2)%10;
+            sum=(sum*10)+res;
+            num = num / 10;
+
+        }
+        while(sum>0) {
+            int rem = sum % 10;
+            adigit=(adigit*10)+rem;
+            sum = sum / 10;
+
+        }
+        System.out.println("Sum of digits:-"+adigit);
+    }
+    public static void main(String args[]){
+    seclastdigit(5696);
+    }
+}
+
+
+
+Q.Write a program to calculate the sum of the digits of a 3-digit number.
+Number : 132        Output : 6
+
+public class Demo{
+    public static void seclastdigit(int num){
+        int sum=0;
+        while(num>0) {
+            int rem = num % 10;
+            sum += rem;
+            num = num / 10;
+        }
+        System.out.println("Sum of digits:-"+sum);
+    }
+    public static void main(String args[]){
+    seclastdigit(123);
+    }
+}
+
+Q.Write a program to reverse a 3-digit number. E.g.-Number : 132        Output : 231
+
+public class Demo{
+    public static void seclastdigit(int num){
+        int sum=0;
+        while(num>0) {
+            int rem = num % 10;
+            sum =(sum*10)+rem;
+            num = num / 10;
+        }
+        System.out.println("Sum of digits:-"+sum);
+    }
+    public static void main(String args[]){
+    seclastdigit(123);
+    }
+}
+
+
+
+
