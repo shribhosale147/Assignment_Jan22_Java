@@ -1,0 +1,441 @@
+***************************************************************************************************************************
+07-02-2022
+***************************************************************************************************************************
+
+Q 1.Reverse each word
+
+public class Main {
+
+    public static void main(String[] args) {
+        String str="hello how r u";
+        String arr[]=str.split(" ");
+        for(int i=arr.length-1;i>=0;i--){
+            System.out.println(arr[i]);
+        }
+    }
+}
+
+Q 2.Compress the string
+import java.util.*;
+import java.math.*;
+public class Main
+{
+    private static void stringCompressor(String msg) {
+		System.out.println("Compressed String: "+msg.replaceAll(" ", ""));
+	}
+	public static void main(String[] args) {
+	    
+		String str="helloooo world";
+		stringCompressor(str);
+	}
+}
+
+Q 3.Highest Occuring character
+import java.util.*;
+import java.math.*;
+public class Main
+{
+    private static void highestChar(String str) {
+		char arr[]=str.toCharArray();
+		Arrays.sort(arr);
+		int cnt[]=new int[arr.length];
+		int count=1;
+		for(int i=0;i<arr.length-1;i++){
+		    if(arr[i]==arr[i+1]){
+		        count++;
+		        cnt[i]=0;
+		    }else{
+		        cnt[i]=count;
+		        count=1;
+		    }
+		}
+		int max=cnt[0];
+		for(int c=0;c<cnt.length;c++){
+		    if(max<cnt[c]){
+		        max=cnt[c];
+		    }
+		}
+		for(int k=0;k<cnt.length;k++){
+		    if(max==cnt[k]){
+		        System.out.print(arr[k]+" "+cnt[k]);
+		    }
+		}
+		
+	}
+	public static void main(String[] args) {
+	    
+		String str="helloooo world";
+		highestChar(str);
+	}
+}
+
+Q 4.If strings are equal or not
+
+public class Main {
+
+    public static void main(String[] args) {
+        String str="shree";
+        String str1="shree2";
+        System.out.println(str.equals(str1));
+    }
+}
+
+Q 5.check permutation.
+
+import java.util.*;
+public class Main
+{
+    private static boolean permute(int[] array1, int[] array2, int start) {
+		if(start==array2.length-1) {
+		}
+		for(int i=start;i<array2.length;i++) {
+			int temp=array2[start];
+			array2[start]=array2[i];
+			array2[i]=temp;
+			permute(array1,array2,start+1);
+			if(Arrays.toString(array1).equals(Arrays.toString(array2)))
+				return true;
+			array2[i]=array2[start];
+			array2[start]=temp;
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+	    
+		int arr[]={1,2,3,4,5};
+		int arr2[]={5,1,2,3,4};
+		System.out.print(permute(arr,arr2,0));
+	}
+}
+
+***************************************************************************************************************************
+08-02-2022
+***************************************************************************************************************************
+
+"-- Write a method which returns a string by removing special charaters( &,$,:,+,@)
+   spaces from the string  
+   Input: ""Geekster-The%school:where+you@code:your-success$stories""
+   Output : ""eekster The school where you code your success stories
+public class Main {
+
+    public static void main(String[] args) {
+        String str="Geekster-The%school:where+you@code:your-success$stories";
+        String str1="";
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)!='$' && str.charAt(i)!='@' && str.charAt(i)!=':' && str.charAt(i)!='+' && str.charAt(i)!='%' && str.charAt(i)!='-'){
+                str1=str1+str.charAt(i);
+            }else{
+                str1=str1+" ";
+            }
+        }
+        System.out.println(str1);
+    }
+}
+   
+-- WAP to prove that intern() method guarantees to return unique String from from a String pool
+import java.util.*;
+import java.math.*;
+public class Main
+{
+    private static void proofOfIntern() {
+
+	String firstString = "shrikant";
+    String secondString = new String("shrikant");
+
+    System.out.println(firstString == secondString); 
+
+    String thirdString = secondString.intern();
+
+    System.out.println(firstString == thirdString);
+}
+
+	public static void main(String[] args) {
+	    
+	    proofOfIntern();
+	}
+}
+
+-- Write a method which accepts 10 digits mobile number as an Integer parameter and return a string containing country code with mobile number.
+   Input: 7890765456
+   Output : ""+91-7890765456"";
+   import java.io.*;
+import java.util.*;
+import java.math.BigInteger;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        BigInteger num = sc.nextBigInteger();
+        
+        String str1="+91-"+String.valueOf(num);
+        
+        System.out.println(str1);
+    }
+}
+
+-- Write a method which accepts a String as a parameter and returns ratio of vowels to consonants in String format
+   Input: ""We are Proud to be an India""
+   Output : ""11:10"""
+import java.io.*;
+import java.util.*;
+import java.math.BigInteger;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int count0=0;
+        int count1=0;
+        String str1="We are Proud to be an India";
+        String str=str1.toLowerCase();
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u'){
+                count0++;
+            }else{
+                count1++;
+            }
+        }
+        System.out.println(count0+":"+count1);
+    }
+}
+***************************************************************************************************************************
+09-02-2022
+***************************************************************************************************************************
+Q 1.make an array with user inputs of size 10. , then find sum of all elements in array
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the size of array:-");
+       int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        int sum=0;
+        for(int j=0;j<size;j++){
+            sum+=arr[j];
+        }
+        System.out.println("Sum of all elements:-"+sum);
+    }
+}
+
+Q 2.make an array with user inputs of size 10. , then find midle element in an array
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the size of array:-");
+       int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+        int mid=size/2;
+        System.out.println("Middle of all elements:-"+arr[mid]);
+    }
+}
+
+Q 3.make an array with user inputs of size 10. then print all positive numbers in an array"
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the size of array:-");
+       int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+    
+        for(int j=0;j<size;j++){
+            if(arr[j]>0){
+                System.out.print(arr[j]+" ");
+            }
+        }
+        
+    }
+}
+***************************************************************************************************************************
+10-02-2022
+***************************************************************************************************************************
+"1.WAP to reverse an array
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       System.out.println("Enter the size of array:-");
+       int size=sc.nextInt();
+        int arr[]=new int[size];
+        for(int i=0;i<size;i++){
+            arr[i]=sc.nextInt();
+        }
+    
+        for(int j=size-1;j>=0;j--){
+            
+                System.out.print(arr[j]+" ");
+        
+        }
+        
+    }
+}
+
+2.Given a random set of numbers, Print them in sorted order.
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        int arr[]={10,34,56,2,33,78};
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        for(int k=0;k<arr.length;k++){
+            System.out.print(arr[k]+" ");
+        }
+    }
+}
+
+3. WAP to find first index at which element is present in array 
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        int arr[]={10,34,56,2,33,78};
+        
+        System.out.print("First element of the array:-"+arr[0]);
+    }
+}
+
+4. WAP to find last index at which element is present in array "
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+       
+        int arr[]={10,34,56,2,33,78};
+        
+        System.out.print("First element of the array:-"+arr[arr.length-1]);
+    }
+}
+***************************************************************************************************************************
+11-02-2022
+***************************************************************************************************************************
+Q 1. How to find maximum product of two integers in the array where all elements are positive.
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void maxProduct(int arr[]){
+        for(int i=0;i<arr.length-1;i++){
+            for(int j=i+1;j<arr.length;j++){
+                if(arr[i]>arr[j]){
+                    int temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            }
+        }
+        int prod=arr[arr.length-2]*arr[arr.length-1];
+        System.out.print("Product of the two max elements:-"+prod);
+    }
+
+    public static void main(String[] args) {
+       
+        int arr[]={10,34,56,2,33,78};
+        
+        maxProduct(arr);
+    }
+}
+Q 2. WAP to check if array is unique or not.
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static boolean isUniq(int arr[]){
+        for(int i=0;i<arr.length;i++){
+            for(int j=1;j<arr.length;j++){
+                if((arr[i]==arr[j]) && i!=j){
+                    return false;
+                    
+                }
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+       
+        int arr[]={10,34,56,2,33,78};
+        
+        System.out.print(isUniq(arr));
+    }
+}
+Q 3. WAP to check if they are permutation of each other.
+import java.util.*;
+public class Main
+{
+    private static boolean permute(int[] array1, int[] array2, int start) {
+		if(start==array2.length-1) {
+		}
+		for(int i=start;i<array2.length;i++) {
+			int temp=array2[start];
+			array2[start]=array2[i];
+			array2[i]=temp;
+			permute(array1,array2,start+1);
+			if(Arrays.toString(array1).equals(Arrays.toString(array2)))
+				return true;
+			array2[i]=array2[start];
+			array2[start]=temp;
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+	    
+		int arr[]={1,2,3,4,5};
+		int arr2[]={5,1,2,3,4};
+		System.out.print(permute(arr,arr2,0));
+	}
+}
+Q 4. Write a function called middle that takes a list and returns a new list that contains all but the first ans last elements.
+import java.util.*;
+public class Main
+{
+    public static int [] midArray(int arr[]){
+        int mid=arr.length/2;
+        int arr1[]=new int[2];
+        arr1[0]=arr[mid-1];
+        arr1[1]=arr[mid];
+        return arr1;
+    }
+	public static void main(String[] args) {
+	    
+		int arr[]={1,2,3,4,5,6};
+		System.out.print(Arrays.toString(midArray(arr)));
+	}
+}
